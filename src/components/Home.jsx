@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import Products from "./Products";
+import ScrollToTop from "./ScrollToTop";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Blog2 />
       {/* {Footer Section} */}
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
