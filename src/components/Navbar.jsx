@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { IoCart } from "react-icons/io5";
 import { CartContext } from "./Context/CartProvider";
+
 const Navbar = () => {
   const { cart } = useContext(CartContext);
   return (
@@ -40,7 +41,7 @@ const Navbar = () => {
             </Link>
 
             <p className="absolute top-0 left-5 bg-red-600 rounded-full text-gray-100 w-5 h-5 text-center font-bold">
-              {cart.length}
+              {cart.length > 0 ? cart.length : 0}
             </p>
           </div>
         </div>

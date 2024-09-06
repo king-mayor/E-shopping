@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { CartContext } from "./Context/CartProvider";
+
 import { Headphones } from "./Data";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 const Product = () => {
+  const { addToCart } = useContext(CartContext);
   const { id } = useParams();
   const products = Headphones.find((items) => items.id == id);
   console.log(products);
-  const { dispatch } = useContext(CartContext);
+
   return (
     <>
       <Navbar />
@@ -55,7 +57,7 @@ const Product = () => {
           <div className="flex gap-3">
             <button
               className="text-gray-100 bg-black p-2 uppercase cursor-pointer border-none outline-none hover:bg-red-600"
-              onClick={() => dispatch({ type: "Add", products: products })}
+              onClick={() => addToCart(products)}
             >
               add to cart
             </button>

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { CartContext } from "./Context/CartProvider.jsx";
 const Products = () => {
-  const [product, setProduct] = useState(Headphones);
-  const { dispatch } = useContext(CartContext);
+  const { products, addToCart } = useContext(CartContext);
+
   return (
     <div>
       <div>
@@ -15,7 +15,7 @@ const Products = () => {
         </div>
         <div className="">
           <div className="container mx-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-10">
-            {product.map((item) => (
+            {products.map((item) => (
               <div key={item.id}>
                 <div>
                   <Link to={`/product/${item.id}`}>
@@ -34,7 +34,7 @@ const Products = () => {
                   </h3>
                   <button
                     className="text-gray-100 bg-red-600 py-1 px-3 cursor-pointer rounded-2xl my-3 border-none outline-none active:bg-black"
-                    onClick={() => dispatch({ type: "Add", product: product })}
+                    onClick={() => addToCart(item)}
                   >
                     Add to cart
                   </button>
@@ -47,5 +47,4 @@ const Products = () => {
     </div>
   );
 };
-
 export default Products;

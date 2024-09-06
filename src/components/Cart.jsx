@@ -16,7 +16,7 @@ const Cart = () => {
         {cart.length > 0 ? (
           <div>
             {cart.map((prod) => (
-              <CartProduct product={prod} />
+              <CartProduct prod={prod} key={prod.id} />
             ))}
           </div>
         ) : (
