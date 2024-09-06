@@ -11,7 +11,9 @@ const Navbar = () => {
       <div className="flex justify-between py-6">
         <div className="flex text-center items-center px-10">
           <div>
-            <h1 className="text-3xl text-red-500 font-semibold">ESHOP</h1>
+            <Link to="/">
+              <h1 className="text-3xl text-red-500 font-semibold">ESHOP</h1>
+            </Link>
           </div>
           <div className="lg:flex hidden ">
             <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
