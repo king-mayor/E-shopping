@@ -30,7 +30,7 @@ const Products = () => {
                     {item.name}
                   </h2>
                   <h3 className="text-lg font-bold text-gray-500">
-                    {item.price}
+                    ${item.price}
                   </h3>
                   <button
                     className="text-gray-100 bg-red-600 py-1 px-3 cursor-pointer rounded-2xl my-3 border-none outline-none active:bg-black"

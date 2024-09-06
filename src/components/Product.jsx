@@ -51,7 +51,7 @@ const Product = () => {
           </div>
           <div>
             <h3 className="text-red-600 lg:text-xl text-md font-bold my-2">
-              Price: {products.price}
+              Price: ${products.price}
             </h3>
           </div>
           <div className="flex gap-3">

@@ -25,7 +25,7 @@ const Cart = () => {
               Your cart is empty, please add a product
             </h2>
             <img
-              className="lg:w-[200px] lg:h-[200px] w-full px-10"
+              className=" lg:w-[300px] lg:h-[200px] w-full px-10"
               src={cartimg}
               alt="cart"
             />
