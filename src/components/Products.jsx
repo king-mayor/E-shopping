@@ -14,7 +14,11 @@ const Products = () => {
           <h2 className="text-lg text-gray-500">Explore Our Products</h2>
         </div>
         <div className="">
-          <div className="container mx-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-10">
+          <div
+            className="container mx-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-10"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             {products.map((item) => (
               <div key={item.id}>
                 <div>

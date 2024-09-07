@@ -2,11 +2,17 @@ import React from "react";
 import { CartContext } from "./Context/CartProvider";
 import { useContext } from "react";
 const CartProduct = ({ prod }) => {
-  const { clearCart, removeFromCart } = useContext(CartContext);
+  const {
+    clearCart,
+    removeFromCart,
+    quantity,
+    handleIncreaseBtn,
+    handleDecreaseBtn,
+  } = useContext(CartContext);
   const { id, name, price, image } = prod;
   return (
     <>
-      <div>
+      <div className="">
         <div className="flex md:flex-row flex-col justify-around  items-center my-6 md:gap-0 gap-4">
           <div className="flex items-center gap-4">
             <div>
@@ -16,7 +22,7 @@ const CartProduct = ({ prod }) => {
               <h2 className="text-xl font-bold text-black">{name}</h2>
               <button
                 className="text-gray-100 bg-red-600 p-2 cursor-pointer border-none outline-none my-2"
-                onClick={removeFromCart}
+                onClick={() => removeFromCart(id)}
               >
                 Delete
               </button>
@@ -24,15 +30,21 @@ const CartProduct = ({ prod }) => {
           </div>
           <div className="flex gap-4">
             <div>
-              <button className="text-gray-100 bg-black font-bold cursor-pointer outline-none border-none p-2">
+              <button
+                className="text-gray-100 bg-black font-bold cursor-pointer outline-none border-none p-2"
+                onClick={() => handleDecreaseBtn(id)}
+              >
                 -
               </button>
             </div>
             <div>
-              <p className="text-black bg-gray-100 p-2">0</p>
+              <p className="text-black bg-gray-100 p-2">{quantity}</p>
             </div>
             <div>
-              <button className="text-gray-100 bg-black font-bold cursor-pointer outline-none border-none p-2">
+              <button
+                className="text-gray-100 bg-black font-bold cursor-pointer outline-none border-none p-2"
+                onClick={() => handleIncreaseBtn(id)}
+              >
                 +
               </button>
             </div>
@@ -53,7 +65,7 @@ const CartProduct = ({ prod }) => {
               className="text-gray-100 bg-red-600 p-2 cursor-pointer border-none outline-none my-2"
               onClick={clearCart}
             >
-              clearCart
+              clear cart
             </button>
           </div>
         </div>

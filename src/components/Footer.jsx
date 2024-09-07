@@ -8,7 +8,7 @@ import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="flex lg:justify-around md:flex-row flex-col py-14 lg:gap-0 gap-10 justify-center lg:px-0 px-10">
-      <div>
+      <div data-aos="zoom-in-left" data-aos-duration="2000">
         <h2 className="text-3xl text-red-600 font-semibold">ESHOP</h2>
         <p className="text-md text-gray-600 text-wrap">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores
@@ -21,7 +21,7 @@ const Footer = () => {
           Contact Me
         </button>
       </div>
-      <div>
+      <div data-aos="fade-up" data-aos-duration="2000">
         <h2 className="lg:text-xl text-lg font-bold text-black">
           Important Links
         </h2>
@@ -32,7 +32,7 @@ const Footer = () => {
           <Link>Blog</Link>
         </div>
       </div>
-      <div>
+      <div data-aos="fade-up" data-aos-duration="2000">
         <h2 className="lg:text-xl text-lg font-bold text-black">Quick Links</h2>
         <div className="flex flex-col text-gray-600 gap-2 my-2 hover:">
           <Link>Home</Link>
@@ -41,7 +41,7 @@ const Footer = () => {
           <Link>Blog</Link>
         </div>
       </div>
-      <div>
+      <div data-aos="fade-up" data-aos-duration="2000">
         <h2 className="lg:text-xl text-lg font-bold text-black">Address</h2>
         <div className="flex items-center gap-3 my-2">
           <div>

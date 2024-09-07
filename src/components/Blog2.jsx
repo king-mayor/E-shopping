@@ -13,7 +13,7 @@ const Blog2 = () => {
     <div>
       <div className="py-24">
         <div className="bg-green-500 flex items-center lg:flex-row flex-col justify-center rounded-2xl mx-10 lg:h-[400px] lg:py-0 py-10">
-          <div>
+          <div data-aos="fade-up" data-aos-duration="2000">
             <h2 className="text-gray-100 text-md">30% OFF</h2>
             <h3 className="uppercase text-7xl font-bold text-gray-100 py-4">
               fine<br></br> smile
@@ -21,9 +21,15 @@ const Blog2 = () => {
             <h4 className="text-gray-100 text-md">14 Jan to 28 Jan</h4>
           </div>
           <div className="">
-            <img className="" src={watch} alt="headphone" />
+            <img
+              className=""
+              src={watch}
+              alt="headphone"
+              data-aos="zoom-in-up"
+              data-aos-duration="2000"
+            />
           </div>
-          <div>
+          <div data-aos="fade-up" data-aos-duration="2000">
             <h2 className="text-gray-100 text-md">Air Solo Bass</h2>
             <h3 className="uppercase text-3xl font-bold text-gray-100 py-4">
               Winter Sale
@@ -46,7 +52,7 @@ const Blog2 = () => {
         </div>
         {/* {Display Blogs Section} */}
         <div className="container mx-auto  grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 py-6 justify-items-center md:px-0 px-20">
-          <div className="">
+          <div data-aos="zoom-in-up" data-aos-duration="2000">
             <img
               className="lg:w-96 w-full h-64 rounded-2xl"
               src={blog1}
@@ -61,7 +67,7 @@ const Blog2 = () => {
               consequuntur, eligendi corporis maiores molestiae...
             </p>
           </div>
-          <div className="">
+          <div data-aos="zoom-in-up" data-aos-duration="2000">
             <img
               className="lg:w-96 w-full h-64 rounded-2xl"
               src={blog2}
@@ -76,7 +82,7 @@ const Blog2 = () => {
               consequuntur, eligendi corporis maiores molestiae...
             </p>
           </div>
-          <div className="">
+          <div data-aos="zoom-in-up" data-aos-duration="2000">
             <img
               className="lg:w-96 w-full h-64 rounded-2xl"
               src={blog3}
@@ -95,19 +101,19 @@ const Blog2 = () => {
       </div>
       {/* {Logo Display Section} */}
       <div className="bg-gray-200 md:flex justify-around py-6 hidden">
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-20 h-16" src={br1} alt="brand-logo" />
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-20 h-16" src={br2} alt="brand-logo" />
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-20 h-16" src={br3} alt="brand-logo" />
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-20 h-16" src={br4} alt="brand-logo" />
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-duration="2000">
           <img className="w-20 h-16" src={br5} alt="brand-logo" />
         </div>
       </div>
