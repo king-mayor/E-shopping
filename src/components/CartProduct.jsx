@@ -5,15 +5,15 @@ const CartProduct = ({ prod }) => {
   const {
     clearCart,
     removeFromCart,
-    quantity,
+    amount,
     handleIncreaseBtn,
     handleDecreaseBtn,
   } = useContext(CartContext);
   const { id, name, price, image } = prod;
   return (
     <>
-      <div className="">
-        <div className="flex flex-row justify-around  items-center my-6 md:gap-0 gap-4">
+      <div className="border-2 border-gray-200 my-4 lg:mx-4 mx-2">
+        <div className="flex flex-row justify-around  items-center my-2 md:gap-0 gap-4">
           <div className="lg:flex lg:flex-row flex-col items-center gap-4">
             <div>
               <img
@@ -38,7 +38,7 @@ const CartProduct = ({ prod }) => {
               </button>
             </div>
             <div>
-              <p className="text-black bg-gray-100 p-2">{quantity}</p>
+              <p className="text-black bg-gray-100 p-2">{amount}</p>
             </div>
             <div>
               <button

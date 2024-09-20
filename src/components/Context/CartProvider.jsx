@@ -8,7 +8,6 @@ const CartContextProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [amount, setAmount] = useState(0);
   const [quantity, setQuantity] = useState(1);
-
   //add products to cart
   const addToCart = (item, id) => {
     const newItem = { ...item, amount: 1 };
@@ -69,13 +68,24 @@ const CartContextProvider = ({ children }) => {
       setCart([...cart, newItem]);
     }
   };
-  //IncreaseItem
+
   const handleDecreaseBtn = (id) => {
-    const cartItems = cart.find((product) => {});
-    setQuantity(cartItems);
+    const cartItem = cart.find((product) => {
+      product.id === id;
+      if (cartItem) {
+        const decr = cartItem.amount - 1;
+      }
+    });
   };
   const handleIncreaseBtn = (id) => {
-    setQuantity[(prev) => prev + 1];
+    const cartItem = cart.find((product) => {
+      product.id === id;
+      if (amount <= 10 && amount >= 1) {
+        setAmount(amount++);
+      } else {
+        setAmount(1);
+      }
+    });
   };
   return (
     <CartContext.Provider
@@ -88,6 +98,7 @@ const CartContextProvider = ({ children }) => {
         handleDecreaseBtn,
         handleIncreaseBtn,
         quantity,
+        amount,
       }}
     >
       {children}
