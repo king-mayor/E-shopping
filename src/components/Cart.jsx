@@ -7,7 +7,7 @@ import { Headphones } from "./Data";
 import Navbar from "./Navbar";
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, clearCart } = useContext(CartContext);
 
   return (
     <>
@@ -20,68 +20,79 @@ const Cart = () => {
                 <CartProduct prod={prod} key={prod.id} />
               ))}
               {/* {Checkout Section} */}
-              <div
-                className="flex lg:justify-end justify-center mx-12 my-10"
-                data-aos="zoom-in-right"
-                data-aos-duration="2000"
-              >
-                <div className="bg-white p-6 shadow-2xl">
-                  <div>
-                    <h2 className=" text-black text-xl font-bold uppercase">
-                      cart summary
-                    </h2>
-                  </div>
-                  <div className="1st flex gap-6">
+              <div className="flex items-center lg:justify-between lg:flex-row flex-col-reverse justify-center mx-10 my-14 lg:gap-0 gap-10">
+                <div className="1st">
+                  <button
+                    onClick={clearCart}
+                    className="bg-red-600 text-gray-100 cursor-pointer border-none outline-none p-2 font-bold active:bg-black"
+                  >
+                    Clear cart
+                  </button>
+                </div>
+
+                <div
+                  // className="2nd flex lg:justify-end justify-center mx-12 my-10"
+                  data-aos="zoom-in-right"
+                  data-aos-duration="2000"
+                >
+                  <div className="bg-white p-6 shadow-2xl">
                     <div>
-                      <h3 className="text-lg text-gray-600 font-semibold">
-                        Items
-                      </h3>
+                      <h2 className=" text-black text-xl font-bold uppercase">
+                        cart summary
+                      </h2>
+                    </div>
+                    <div className="1st flex gap-6">
+                      <div>
+                        <h3 className="text-lg text-gray-600 font-semibold">
+                          Items
+                        </h3>
+                      </div>
+                      <div>
+                        <p className="text-lg text-gray-600 font-semibold">3</p>
+                      </div>
+                    </div>
+                    <div className="2nd  flex gap-6 ">
+                      <div>
+                        <h3 className="text-lg text-gray-600 font-semibold">
+                          Sub-total
+                        </h3>
+                      </div>
+                      <div className="text-lg text-gray-600 font-semibold">
+                        $390
+                      </div>
+                    </div>
+                    <div className="3rd  flex gap-6">
+                      <div>
+                        <h3 className="text-lg text-gray-600 font-semibold">
+                          Promo Code
+                        </h3>
+                      </div>
+                      <div>
+                        <input
+                          className="outline-none border-none pl-2 w-14"
+                          type="text"
+                          placeholder="Enter code"
+                        />
+                      </div>
+                      <div>
+                        <button className="text-gray-100 bg-black border-none outline-none cursor-pointer p-2">
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                    <div className="4th  flex gap-6">
+                      <div>
+                        <h3 className="text-lg text-gray-600 font-semibold">
+                          Total cost
+                        </h3>
+                      </div>
+                      <div className="text-lg text-red-600 font-bold">$390</div>
                     </div>
                     <div>
-                      <p className="text-lg text-gray-600 font-semibold">3</p>
-                    </div>
-                  </div>
-                  <div className="2nd  flex gap-6 ">
-                    <div>
-                      <h3 className="text-lg text-gray-600 font-semibold">
-                        Sub-total
-                      </h3>
-                    </div>
-                    <div className="text-lg text-gray-600 font-semibold">
-                      $390
-                    </div>
-                  </div>
-                  <div className="3rd  flex gap-6">
-                    <div>
-                      <h3 className="text-lg text-gray-600 font-semibold">
-                        Promo Code
-                      </h3>
-                    </div>
-                    <div>
-                      <input
-                        className="outline-none border-none pl-2 w-14"
-                        type="text"
-                        placeholder="Enter code"
-                      />
-                    </div>
-                    <div>
-                      <button className="text-gray-100 bg-black border-none outline-none cursor-pointer p-2">
-                        Apply
+                      <button className="capitalize text-gray-100 bg-red-600 cursor-pointer p-2 my-2">
+                        check out
                       </button>
                     </div>
-                  </div>
-                  <div className="4th  flex gap-6">
-                    <div>
-                      <h3 className="text-lg text-gray-600 font-semibold">
-                        Total cost
-                      </h3>
-                    </div>
-                    <div className="text-lg text-red-600 font-bold">$390</div>
-                  </div>
-                  <div>
-                    <button className="capitalize text-gray-100 bg-red-600 cursor-pointer p-2 my-2">
-                      check out
-                    </button>
                   </div>
                 </div>
               </div>

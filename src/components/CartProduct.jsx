@@ -5,9 +5,10 @@ const CartProduct = ({ prod }) => {
   const {
     clearCart,
     removeFromCart,
-    amount,
     handleIncreaseBtn,
     handleDecreaseBtn,
+    itemAmount,
+    amount,
   } = useContext(CartContext);
   const { id, name, price, image } = prod;
   return (
@@ -38,7 +39,7 @@ const CartProduct = ({ prod }) => {
               </button>
             </div>
             <div>
-              <p className="text-black bg-gray-100 p-2">{amount}</p>
+              <p className="text-black bg-gray-100 p-2">0</p>
             </div>
             <div>
               <button

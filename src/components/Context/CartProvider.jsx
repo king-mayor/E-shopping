@@ -6,8 +6,7 @@ const CartContextProvider = ({ children }) => {
   const [products, setProducts] = useState(Headphones);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
-  const [amount, setAmount] = useState(0);
-  const [quantity, setQuantity] = useState(1);
+  const [itemAmount, setItemAmount] = useState(0);
   //add products to cart
   const addToCart = (item, id) => {
     const newItem = { ...item, amount: 1 };
@@ -45,47 +44,57 @@ const CartContextProvider = ({ children }) => {
     }
     alert("Remove product from cart?");
   };
-  //clear entire cart
 
+  // clear the entire cart
   const clearCart = () => {
     setCart([]);
   };
-  // DecreaseItem
-  const decreaseItem = (id) => {
-    const cartItem = cart.find((product) => {
-      return product.id === id;
-    });
-    if (cartItem) {
-      const newCart = [...cart].map((product) => {
-        if (product.id === id) {
-          return { ...product, amount: cartItem.amount - 1 };
-        } else {
-          return product;
-        }
-      });
-      setCart(newCart);
-    } else {
-      setCart([...cart, newItem]);
-    }
-  };
-
+  //function to decrease the amount
   const handleDecreaseBtn = (id) => {
     const cartItem = cart.find((product) => {
-      product.id === id;
+      return product.id === id;
       if (cartItem) {
-        const decr = cartItem.amount - 1;
+        const newCart = cart.map((item) => {
+          if (item.id === id) {
+            return { ...item, amount: cartItem.amount - 1 };
+          } else {
+            return item;
+          }
+          setCart(newCart);
+        });
+        if (cartItem.amount < 1) {
+          removeFromCart(id);
+        }
       }
     });
   };
+  // function to increase the amount
   const handleIncreaseBtn = (id) => {
     const cartItem = cart.find((product) => {
-      product.id === id;
-      if (amount <= 10 && amount >= 1) {
-        setAmount(amount++);
-      } else {
-        setAmount(1);
+      product.id == id;
+      if (cartItem) {
+        addToCart(product, id);
       }
     });
+    // function to calculate the total
+    useEffect(() => {
+      const total = cart.reduce((accumulator, currentItem) => {
+        const priceToNumber = parseFloat(currentItem.price);
+        if (isNaN(priceToNumber)) {
+          return accumulator;
+        } else {
+          return accumulator + priceToNumber * currentItem.amount;
+        }
+      }, 0);
+      setTotal(total);
+    }, [cart]);
+    //function to calculate the amount
+    useEffect(() => {
+      const amount = cart.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.amount;
+      }, 0);
+      setItemAmount(amount);
+    }, [cart]);
   };
   return (
     <CartContext.Provider
@@ -97,8 +106,7 @@ const CartContextProvider = ({ children }) => {
         clearCart,
         handleDecreaseBtn,
         handleIncreaseBtn,
-        quantity,
-        amount,
+        itemAmount,
       }}
     >
       {children}
