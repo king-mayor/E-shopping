@@ -16,19 +16,34 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="lg:flex hidden ">
-            <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
+            <Link
+              to="/"
+              className="text-lg text-gray-500 font-semibold px-6 hover:text-red-600"
+            >
               Home
             </Link>
-            <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
+            <Link
+              to="/"
+              className="text-lg text-gray-500 font-semibold px-6 hover:text-red-600"
+            >
               Shop
             </Link>
-            <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
+            <Link
+              to="/"
+              className="text-lg text-gray-500 font-semibold px-6 hover:text-red-600"
+            >
               About
             </Link>
-            <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
+            <Link
+              to="/"
+              className="text-lg text-gray-500 font-semibold px-6 hover:text-red-600"
+            >
               Blogs
             </Link>
-            <Link to="/" className="text-lg text-gray-500 font-semibold px-6">
+            <Link
+              to="/"
+              className="text-lg text-gray-500 font-semibold px-6 hover:text-red-600"
+            >
               Quick Links
             </Link>
           </div>
