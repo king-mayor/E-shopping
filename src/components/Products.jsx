@@ -15,7 +15,7 @@ const Products = () => {
         </div>
         <div className="">
           <div
-            className="container mx-auto grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-10"
+            className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 justify-items-center gap-10 lg:px-0 px-10"
             data-aos="fade-up"
             data-aos-duration="2000"
           >
@@ -24,7 +24,7 @@ const Products = () => {
                 <div>
                   <Link to={`/product/${item.id}`}>
                     <img
-                      className="w-64 h-64 rounded-lg"
+                      className=" rounded-lg"
                       src={item.image}
                       alt="product-image"
                     />
@@ -37,7 +37,7 @@ const Products = () => {
                     ${item.price}
                   </h3>
                   <button
-                    className="text-gray-100 bg-red-600 py-1 px-3 cursor-pointer rounded-2xl my-3 border-none outline-none active:bg-black"
+                    className="text-gray-100 bg-red-600 hover:bg-black py-1 px-3 cursor-pointer rounded-2xl my-3 border-none outline-none active:bg-black"
                     onClick={() => addToCart(item)}
                   >
                     Add to cart

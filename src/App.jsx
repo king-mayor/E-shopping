@@ -12,15 +12,19 @@ const App = () => {
     AOS.init();
   }, []);
   return (
-    <Router>
-      <Routes>
-        <Route path="/navbar" element={<Navbar />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/footer" element={<Footer />} />
-      </Routes>
-    </Router>
+    <>
+      <div className="overflow-y-hidden overflow-x-hidden">
+        <Router>
+          <Routes>
+            <Route path="/navbar" element={<Navbar />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/footer" element={<Footer />} />
+          </Routes>
+        </Router>
+      </div>
+    </>
   );
 };
 

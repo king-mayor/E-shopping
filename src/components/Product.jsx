@@ -57,7 +57,7 @@ const Product = () => {
           <div className="flex gap-3">
             <button
               className="text-gray-100 bg-black p-2 uppercase cursor-pointer border-none outline-none hover:bg-red-600"
-              onClick={() => addToCart(products)}
+              onClick={() => addToCart(products, id)}
             >
               add to cart
             </button>
